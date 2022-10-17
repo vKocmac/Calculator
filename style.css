@@ -1,0 +1,45 @@
+.calc-body{
+  width:350px;
+  height: 550px;
+  margin:100px auto;
+  border-style:outset;
+  border-color: LightGrey;
+}
+
+.digit-container{
+  width:300px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.calc-container{
+  width:300px;
+  margin:0 auto;
+}
+
+.screen{
+width:250px;
+height: 75px;
+margin: 30px auto 30px;
+border-style:double;
+background-color: PaleGreen;
+display: flex;
+justify-content: flex-end;
+}
+.screen h1{
+  margin-right: 10px;
+}
+
+.btn{
+  width: 75px;
+  height: 75px;
+  color:grey;
+  font-size: 1.5em;
+}
+
+.del{
+  display: flex;
+  width:300px;
+  justify-content: flex-end;
+}
