@@ -16,7 +16,8 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  result = a / b
+  result = (a / b)
+
   return result
 }
 
@@ -79,7 +80,7 @@ operators.forEach((operator) => {
       // index = displayValueArray.indexOf("=")
       console.log(leftPart, rightPart)
       operate(leftPart, rightPart, functionOperator);
-      displayValue.textContent = result;
+      displayValue.textContent = result.toFixed(3);
       displayValuePast.textContent = displayValueArray.join("");
     }
   });
