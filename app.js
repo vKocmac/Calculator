@@ -1,12 +1,12 @@
 "use strict"
 
 function add(a, b) {
-  result = a+b;
+  result = a + b;
   return result
 }
 
 function substract(a, b) {
-  result = a-b;
+  result = a - b;
   return result
 }
 
@@ -17,6 +17,11 @@ function multiply(a, b) {
 
 function divide(a, b) {
   result = a / b
+  return result
+}
+
+function sqrt(a) {
+  result = Math.sqrt(a);
   return result
 }
 
@@ -33,8 +38,10 @@ let result = 0;
 let displayValueArray = [];
 const digits = document.querySelectorAll(".btn");
 const displayValue = document.querySelector(".screen h1");
+const displayValuePast = document.querySelector(".screen h2");
 const operators = document.querySelectorAll(".operator");
 const equal = document.querySelector(".equal");
+const clear = document.querySelector(".clear");
 let index;
 
 operators.forEach((operator) => {
@@ -56,6 +63,9 @@ operators.forEach((operator) => {
       } else if (displayValueArray.includes("×")) {
         functionOperator = multiply;
         index = displayValueArray.indexOf("×")
+      } else if (displayValueArray.includes("√")) {
+        functionOperator = sqrt;
+        index = displayValueArray.indexOf("√")
       }
     }
 
@@ -67,9 +77,10 @@ operators.forEach((operator) => {
     console.log(index);
     if (displayValueArray.includes("=")) {
       // index = displayValueArray.indexOf("=")
-      console.log(leftPart,rightPart)
-      operate(leftPart,rightPart,functionOperator);
+      console.log(leftPart, rightPart)
+      operate(leftPart, rightPart, functionOperator);
       displayValue.textContent = result;
+      displayValuePast.textContent = displayValueArray.join("");
     }
   });
 });
@@ -80,3 +91,10 @@ digits.forEach((digit) => {
     displayValue.textContent = displayValueArray.join("");
   });
 });
+
+clear.addEventListener("click",()=>{
+  displayValueArray = [];
+  displayValuePast.textContent = "";
+  displayValue.textContent = 0;
+
+})
