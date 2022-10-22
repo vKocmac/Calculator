@@ -16,13 +16,13 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  result = (a / b)
+  result = (a / b).toFixed(3)
 
   return result
 }
 
 function sqrt(a) {
-  result = Math.sqrt(a);
+  result = (Math.sqrt(a)).toFixed(3);
   return result
 }
 
@@ -43,6 +43,7 @@ const displayValuePast = document.querySelector(".screen h2");
 const operators = document.querySelectorAll(".operator");
 const equal = document.querySelector(".equal");
 const clear = document.querySelector(".clear");
+const del = document.querySelector(".delete");
 let index;
 
 operators.forEach((operator) => {
@@ -80,8 +81,10 @@ operators.forEach((operator) => {
       // index = displayValueArray.indexOf("=")
       console.log(leftPart, rightPart)
       operate(leftPart, rightPart, functionOperator);
-      displayValue.textContent = result.toFixed(3);
+      displayValue.textContent = result;
       displayValuePast.textContent = displayValueArray.join("");
+      leftPart = result;
+      rightPart = 0;
     }
   });
 });
@@ -93,9 +96,18 @@ digits.forEach((digit) => {
   });
 });
 
+
 clear.addEventListener("click",()=>{
   displayValueArray = [];
   displayValuePast.textContent = "";
   displayValue.textContent = 0;
 
 })
+
+del.addEventListener("click",()=>{
+  displayValueArray.pop();
+  displayValue.textContent = displayValueArray.join("");
+})
+
+//TODO
+//1.CSS general

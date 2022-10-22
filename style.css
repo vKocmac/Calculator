@@ -1,9 +1,17 @@
+body{
+  background-color: #F8EDE3
+}
+
 .calc-body{
   width:350px;
   height: 550px;
   margin:100px auto;
   border-style:outset;
-  border-color: LightGrey;
+
+  background-color: #C8DBBE;
+  border-radius: 10px;
+  border-color: darkGrey;
+  border-width: thick;
 }
 
 .digit-container{
@@ -39,8 +47,15 @@ justify-content: flex-end;
 .btn,.operator,.equal,.clear,.delete {
   width: 75px;
   height: 75px;
-  color:grey;
+  color: #232931;
   font-size: 1.5em;
+  border-radius: 7px;
+  border-color: darkGrey;
+  font-size:1.7em;
+}
+.delete,.clear{
+  color: #FF1700;
+  /* border-color: #FF1E1E; */
 }
 
 
